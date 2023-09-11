@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{
+    int incoming,outgoing,n,store=0,buck;
+    printf("buck:");
+    scanf("%d",&buck);
+    printf("Ougoing:");
+    scanf("%d",&outgoing);
+    printf("inputs:");
+    scanf("%d",&n);
+    while(n!=0)
+    {
+        printf("Enter incoming:");
+        scanf("%d",&incoming);
+        if(incoming<(buck-store))
+        {
+            store+=incoming;
+            printf("%d out of %d",store,buck);
+        }
+        else
+        {
+            printf("Droped %d",incoming-(buck-store));
+            printf("%d out of %d",store,buck);
+            store=incoming-store;
+        }
+        store=store-outgoing;
+        printf("%d out of %d",store,buck);
+        n--;
+    }
+}
